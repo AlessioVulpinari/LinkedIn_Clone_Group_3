@@ -1,7 +1,13 @@
-import "./App.css"
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import NavBar from "./components/LinkedinNavBar";
 
 function App() {
-  return <></>
+  return (
+    <>
+      <NavBar />
+    </>
+  );
 }
 
-export default App
+export default App;
