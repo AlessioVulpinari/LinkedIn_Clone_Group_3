@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { Nav, Container, Navbar, Dropdown, Form, Row, Col } from "react-bootstrap";
 
 const NavBar = () => {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
   const premiumRandom = () => {
     const text = [
       "Raggiungi i tuoi obiettivi con Premium",
@@ -20,8 +23,7 @@ const NavBar = () => {
   };
 
   const toggleDropdown = () => {
-    const dropdownBtn = document.getElementById("dropdown-ellipsis");
-    dropdownBtn.click();
+    setDropdownOpen(!dropdownOpen);
   };
 
   return (
@@ -68,8 +70,8 @@ const NavBar = () => {
             >
               {/* <NavProfileCard /> */}
             </div>
-            <Nav.Link className="d-none d-sm-flex flex-column justify-content-center align-items-center py-1 ms-0 ms-md-3 pointer">
-              <i className="bi bi-grid-3x3-gap-fill d-flex nav-icon"></i>
+            <Nav.Link className="d-none d-sm-flex flex-column justify-content-center align-items-center py-1  ms-0 ms-md-3 pointer">
+              <i className="bi bi-grid-3x3-gap-fill nav-icon"></i>
               <div className="dropdown-toggle d-none d-md-block">Per le aziende</div>
             </Nav.Link>
             <Nav.Link className="d-none d-md-flex flex-column justify-content-center align-items-center premium-link ms-0 ms-md-2">
@@ -83,17 +85,14 @@ const NavBar = () => {
           >
             <i className="bi bi-three-dots nav-icon" style={{ WebkitTextFillColor: "rgb(255,255,255,0.55)" }}></i>
           </Nav.Link>
-          <Dropdown align="end" data-bs-theme="dark">
-            <Dropdown.Toggle id="dropdown-ellipsis" className="d-none">
-              Dropdown Button
-            </Dropdown.Toggle>
+          <Dropdown align="end" data-bs-theme="dark" show={dropdownOpen}>
             <Dropdown.Menu className="mt-4">
               <div className="d-flex justify-content-center align-items-center px-1">
-                <Nav.Link className="d-flex d-sm-none flex-column justify-content-center align-items-center ms-0 ms-md-1 pointer">
+                <Nav.Link className="d-flex d-xs-none flex-column justify-content-center align-items-center ms-0 ms-md-1 pointer">
                   <i className="bi bi-grid-3x3-gap-fill d-flex nav-icon"></i>
                   <div className="dropdown-toggle d-none d-md-block">Per le aziende</div>
                 </Nav.Link>
-                <Nav.Link className="d-flex d-md-none premium-link m-0 p-0">{premiumRandom()}</Nav.Link>
+                <Nav.Link className="d-flex d-xs-none premium-link m-0 p-0">{premiumRandom()}</Nav.Link>
               </div>
             </Dropdown.Menu>
           </Dropdown>
