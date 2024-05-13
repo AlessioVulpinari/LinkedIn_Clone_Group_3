@@ -1,17 +1,19 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Dropdown } from 'react-bootstrap';
 
 function LinkedinFooter() {
   return (
-    <Container>
+    <Container id='footer' className="py-5">
       <Row>
         <Col>
-          <a href="#a">Informazioni</a>
-          <a href="#b">Linee guida della community</a>
+          <a className='fotLink' href="#a">Informazioni</a>
+          <a className='fotLink' href="#b">Linee guida della community</a>
           <Dropdown>
-                <Dropdown.Toggle variant="outline" id="dropdown-basic">
-                <a href="#c">Privacy e condizioni</a>
+            <a className='fotLink' href="#c">
+                <Dropdown.Toggle variant="outline" id="dropdown-basic" className='priDrop fotLink'>
+                Privacy e condizioni
                 </Dropdown.Toggle>
+            </a>
                 <Dropdown.Menu variant="dark">
                   <Dropdown.Item href="#">Informativa sulla privacy</Dropdown.Item>
                   <Dropdown.Item href="#">Contratto di licenza</Dropdown.Item>
@@ -20,45 +22,57 @@ function LinkedinFooter() {
                   <Dropdown.Item href="#">Informativa sul copyright</Dropdown.Item>
                 </Dropdown.Menu>
           </Dropdown>
-          <a href="#d">Sales Solutions</a>
-          <a href="#e">Centro sicurezza</a>
+          <a className='fotLink' href="#d">Sales Solutions</a>
+          <a className='fotLink' href="#e">Centro sicurezza</a>
         </Col>
         <Col>
-          <a href="#f">Accessibilità</a>
-          <a href="#g">Carriera</a>
-          <a href="#h">Opzioni per gli annunci pubblicitari</a>
-          <a href="#i">Mobile</a>
+          <a className='fotLink' href="#f">Accessibilità</a>
+          <a className='fotLink' href="#g">Carriera</a>
+          <a className='fotLink' href="#h">Opzioni per gli annunci pubblicitari</a>
+          <a className='fotLink' href="#i">Mobile</a>
         </Col>
         <Col>
-          <a href="#j">Talent Solutions</a>
-          <a href="#k">Soluzioni di marketing</a>
-          <a href="#l">Pubblicità</a>
-          <a href="#m">Piccole imprese</a>
+          <a className='fotLink' href="#j">Talent Solutions</a>
+          <a className='fotLink' href="#k">Soluzioni di marketing</a>
+          <a className='fotLink' href="#l">Pubblicità</a>
+          <a className='fotLink' href="#m">Piccole imprese</a>
         </Col>
-        <Col>
+        <Col xs={3} className='lineheight'>
           <div>
-            <div>
-                <i class="bi bi-question-circle-fill"></i>
-                <h4><a href="#n">Domande?</a></h4>
-                <p>Visita il nostro centro assistenza.</p>
+            <div className='d-flex gap-2 align-items-center'>
+                <div className='fotIcon'>
+                    <i className="bi bi-question-circle-fill"></i>
+                </div>
+                <div>
+                    <a className='fotLink fotLinkIcon' href="#n">Domande?</a>
+                    <p>Visita il nostro centro assistenza.</p>
+                </div>  
             </div>
-            <div>
-                <i class="bi bi-gear-fill"></i>
-                <h4><a href="#o">Gestisci il tuo account e la tua privacy</a></h4>
-                <p>Vai alle impostazioni</p>
+            <div className='d-flex gap-2 align-items-center'>
+                <div>
+                    <i className="bi bi-gear-fill"></i>
+                </div>
+                <div>
+                    <a className='fotLink fotLinkIcon' href="#o">Gestisci il tuo account e la tua privacy</a>
+                    <p>Vai alle impostazioni</p>
+                </div>  
             </div>
-            <div>
-                <i class="bi bi-shield-shaded"></i>
-                <h4><a href="#p">Trasparenza sui contenuti consigliati</a></h4>
-                <p>Scopri di più sui contenuti consigliati.</p>
+            <div className='d-flex gap-2 align-items-center'>
+                <div>
+                    <i className="bi bi-shield-shaded"></i>
+                </div>
+                <div>
+                    <a className='fotLink fotLinkIcon' href="#p">Trasparenza sui contenuti consigliati</a>
+                    <p>Scopri di più sui contenuti consigliati.</p>
+                </div>
             </div> 
           </div>
         </Col>
         <Col>
           <p>Selezione lingua</p>
           <Dropdown>
-                <Dropdown.Toggle variant="outline-light" id="dropdown-basic">
-                 Italiano 
+                <Dropdown.Toggle variant="outline-light" id="dropdown-basic" className='langDrop'>
+                 Italiano (Italiano)                               
                 </Dropdown.Toggle>
                 <Dropdown.Menu variant="dark">
                   <Dropdown.Item href="#">English</Dropdown.Item>
@@ -71,7 +85,7 @@ function LinkedinFooter() {
               </Dropdown>
         </Col>
       </Row>
-      <Row>
+      <Row className='mt-5'>
         <Col>
           <p>LinkedIn Corporation © 2024</p>
         </Col>
