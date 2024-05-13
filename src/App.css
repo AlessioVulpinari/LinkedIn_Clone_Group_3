@@ -12,6 +12,15 @@
   text-decoration: underline;
   color: rgb(100, 183, 250);
 }
+.editBtn {
+  background-color: transparent;
+  border: none;
+}
+.editBtn:hover {
+  background-color: transparent;
+  color: white;
+  border: none;
+}
 .addBtn {
   background-color: transparent;
   border-radius: 25px;
