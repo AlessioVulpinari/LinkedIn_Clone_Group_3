@@ -4,7 +4,7 @@ const SingleExperience = () => {
   return (
     <Container className='my-2'>
       <Row className='border-bottom border-secondary'>
-        <Col xs={1}>
+        <Col xs={2} xl={1}>
           <img
             src='https://media.licdn.com/dms/image/C4E0BAQHYgix-Ynux1A/company-logo_100_100/0/1646830188798/epicodeschool_logo?e=1723680000&v=beta&t=zg1tmhGtXpbPBAmTL_24SZvTaU27NltAj4R2tzePhg4'
             alt='Epicode Logo'
@@ -14,7 +14,7 @@ const SingleExperience = () => {
           />
         </Col>
 
-        <Col xs={11}>
+        <Col xs={10} xl={11}>
           <Row>
             <Col xs={12}>
               <h6>Centralinista</h6>

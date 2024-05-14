@@ -2,7 +2,7 @@ import { Button, ListGroup, Container } from "react-bootstrap"
 
 function LinkedinAside() {
   return (
-    <Container id='aside'>
+    <div id='aside'>
       <div className='bg-dark text-light rounded mb-3 mt-2'>
         <Container className='p-3 pb-0'>
           <ListGroup className='list-group-flush'>
@@ -177,7 +177,7 @@ function LinkedinAside() {
         </Container>
         <Button className='showBtn'>Mostra tutto</Button>
       </div>
-    </Container>
+    </div>
   )
 }
 

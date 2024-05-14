@@ -61,14 +61,14 @@ const HeroSectionProfilePage = () => {
         </Row>
         <Container className='bg-secondary rounded mt-3'>
           <Row>
-            <Col xs={11}>
+            <Col xs={10}>
               <Row className='py-2'>
                 <Col xs={12}>Disponibile a lavorare</Col>
                 <Col xs={12}>Ruoli di Programmatore di videogiochi, ...</Col>
                 <Col xs={12}>Mostra Dettagli</Col>
               </Row>
             </Col>
-            <Col xs={1} className='text-end'>
+            <Col xs={2} className='text-end'>
               <i className='bi bi-pencil' />
             </Col>
           </Row>
