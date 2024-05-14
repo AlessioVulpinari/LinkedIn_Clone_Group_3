@@ -12,7 +12,6 @@ function LinkedinModal() {
       <Button variant="primary" onClick={handleShow}>
       <i className='bi bi-pencil'></i>Prof
       </Button>
-
       <Modal className="dark-modal" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Modifica presentazione</Modal.Title>
