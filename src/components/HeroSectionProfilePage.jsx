@@ -35,7 +35,7 @@ const HeroSectionProfilePage = () => {
                 alt='Epicode Logo'
                 width={32}
                 height={32}
-                className='me-1'
+                className='me-2'
               />
               <span>Epicode</span>
             </div>
