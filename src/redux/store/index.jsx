@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit"
-import serchProfileReducer from "../reducers/searchProfileReducer"
+import serchProfileReducer from "../reducers/searchMyProfileReducer"
 
 const rootReducer = combineReducers({
   profile: serchProfileReducer,
