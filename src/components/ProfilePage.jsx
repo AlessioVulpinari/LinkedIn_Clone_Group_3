@@ -5,6 +5,7 @@ import LinkedinAside from "./LinkedinAside"
 import LinkedinFooter from "./LinkedinFooter"
 import LinkedInNavBar from "./LinkedinNavBar"
 import LinkedinModal from "./LinkedinModal"
+import ExpModal from "./ExpModal"
 
 const ProfilePage = () => {
   return (
@@ -23,6 +24,7 @@ const ProfilePage = () => {
       </Container>
       <LinkedinFooter />
       <LinkedinModal/>
+      <ExpModal/>
     </>
   )
 }
