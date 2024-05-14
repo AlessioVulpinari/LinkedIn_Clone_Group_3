@@ -4,6 +4,7 @@ import { Col, Container, Row } from "react-bootstrap"
 import LinkedinAside from "./LinkedinAside"
 import LinkedinFooter from "./LinkedinFooter"
 import LinkedInNavBar from "./LinkedinNavBar"
+import LinkedinModal from "./LinkedinModal"
 
 const ProfilePage = () => {
   return (
@@ -21,6 +22,7 @@ const ProfilePage = () => {
         </Row>
       </Container>
       <LinkedinFooter />
+      <LinkedinModal/>
     </>
   )
 }

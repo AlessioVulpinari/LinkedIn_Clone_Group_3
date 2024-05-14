@@ -31,7 +31,7 @@ const HeroSectionProfilePage = () => {
           <Col xl={5} lg={6} md={0} sm={6} xs={0} className='d-none d-sm-block d-md-none d-lg-block'>
             <div className='d-flex'>
               <img
-                src='https://media.licdn.com/dms/image/C4E0BAQHYgix-Ynux1A/company-logo_100_100/0/1646830188798/epicodeschool_logo?e=1723680000&v=beta&t=zg1tmhGtXpbPBAmTL_24SZvTaU27NltAj4R2tzePhg4'
+                src='https://static.vecteezy.com/system/resources/previews/006/732/119/non_2x/account-icon-sign-symbol-logo-design-free-vector.jpg'
                 alt='Epicode Logo'
                 width={32}
                 height={32}
