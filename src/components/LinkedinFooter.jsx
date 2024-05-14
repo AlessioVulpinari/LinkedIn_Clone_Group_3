@@ -1,4 +1,3 @@
-import React from 'react';
 import { Container, Row, Col, Dropdown } from 'react-bootstrap';
 
 function LinkedinFooter() {
