@@ -119,6 +119,7 @@ body {
 #footer p {
   margin: 0;
 }
+/*NAVBAR*/
 .nav-container {
   .navbar {
     font-size: 0.8rem;
@@ -288,4 +289,51 @@ body {
       display: flex !important;
     }
   }
+}
+/*MODALS*/
+.modal {
+  --bs-modal-width: 750px;
+}
+
+#profileModal h4,
+p {
+  color: white;
+}
+.dark-modal .modal-content {
+  background-color: #191a1a;
+  color: #ffffff;
+}
+
+.dark-modal .modal-header {
+  border-bottom: 1px solid #5155553f;
+}
+
+.dark-modal .modal-footer {
+  border-bottom: 1px solid #5155553f;
+  border-top: 1px solid #5155553f;
+}
+
+.dark-modal .form-label {
+  color: #ffffff;
+}
+
+.dark-modal .form-control {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #6c757d;
+}
+.form-control:focus {
+  border-color: white;
+  box-shadow: none;
+  outline: auto;
+}
+#saveBtn {
+  color: #191a1a;
+  font-weight: 600;
+  background-color: rgb(100, 183, 250);
+  border-radius: 25px;
+  border: solid 1px transparent;
+}
+#saveBtn:hover {
+  background-color: rgb(127, 196, 252);
 }

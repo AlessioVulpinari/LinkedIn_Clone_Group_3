@@ -6,7 +6,7 @@ const SingleExperience = () => {
       <Row className='border-bottom border-secondary'>
         <Col xs={2} xl={1}>
           <img
-            src='https://media.licdn.com/dms/image/C4E0BAQHYgix-Ynux1A/company-logo_100_100/0/1646830188798/epicodeschool_logo?e=1723680000&v=beta&t=zg1tmhGtXpbPBAmTL_24SZvTaU27NltAj4R2tzePhg4'
+            src='https://static.vecteezy.com/system/resources/previews/006/732/119/non_2x/account-icon-sign-symbol-logo-design-free-vector.jpg'
             alt='Epicode Logo'
             width={48}
             height={48}
