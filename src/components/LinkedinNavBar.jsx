@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Nav, Container, Navbar, Dropdown, Form, Row, Col } from "react-bootstrap";
+import NavProfileCard from "./NavProfileLinkedin";
 
 const NavBar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -68,7 +69,7 @@ const NavBar = () => {
               className="d-none justify-content-center align-items-center d-sm-flex"
               style={{ borderRight: "1px solid rgba(255, 255, 255, 0.2)" }}
             >
-              {/* <NavProfileCard /> */}
+              <NavProfileCard />
             </div>
             <Nav.Link className="d-none d-sm-flex flex-column justify-content-center align-items-center py-1  ms-0 ms-md-3 pointer">
               <i className="bi bi-grid-3x3-gap-fill nav-icon"></i>
@@ -87,7 +88,18 @@ const NavBar = () => {
           </Nav.Link>
           <Dropdown align="end" data-bs-theme="dark" show={dropdownOpen}>
             <Dropdown.Menu className="mt-4">
+              <Nav.Link className="d-flex-400 flex-column justify-content-center align-items-center py-1">
+                <i className="bi bi-chat-dots-fill nav-icon"></i>
+                <span className="d-none d-md-inline">Messaggistica</span>
+              </Nav.Link>
+              <Nav.Link className="d-flex-475 flex-column justify-content-center align-items-center py-1">
+                <i className="bi bi-bell-fill nav-icon"></i>
+                <span className="d-none d-md-inline">Notifiche</span>
+              </Nav.Link>
               <div className="d-flex justify-content-center align-items-center px-1">
+                <div className="d-flex d-sm-none justify-content-center align-items-center d-sm-flex">
+                  <NavProfileCard />
+                </div>
                 <Nav.Link className="d-flex d-xs-none flex-column justify-content-center align-items-center ms-0 ms-md-1 pointer">
                   <i className="bi bi-grid-3x3-gap-fill d-flex nav-icon"></i>
                   <div className="dropdown-toggle d-none d-md-block">Per le aziende</div>
