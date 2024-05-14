@@ -10,7 +10,7 @@ function ExpModal() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-      <i className='bi bi-pencil'></i>
+      <i className='bi bi-pencil'></i>Exp
       </Button>
 
       <Modal className="dark-modal" show={show} onHide={handleClose}>
