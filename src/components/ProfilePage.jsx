@@ -1,3 +1,4 @@
+import ExperincesSection from "./ExperincesSection"
 import HeroSectionProfilePage from "./HeroSectionProfilePage"
 import { Col, Container, Row } from "react-bootstrap"
 
@@ -7,6 +8,7 @@ const ProfilePage = () => {
       <Row>
         <Col xs={12} md={8}>
           <HeroSectionProfilePage />
+          <ExperincesSection />
         </Col>
       </Row>
     </Container>
