@@ -1,6 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap"
+import { formatDate } from "../redux/actions"
 
-const SingleExperience = () => {
+const SingleExperience = ({ experience }) => {
   return (
     <Container className='my-2'>
       <Row className='border-bottom border-secondary'>
@@ -17,32 +18,27 @@ const SingleExperience = () => {
         <Col xs={10} xl={11}>
           <Row>
             <Col xs={12}>
-              <h6>Centralinista</h6>
+              <h6>{experience.role}</h6>
             </Col>
             <Col xs={12}>
-              <p className='my-0'>Sol et salus S.P.A. - A tempo pieno</p>
+              <p className='my-0'>{experience.company}</p>
             </Col>
             <Col xs={12} className='text-secondary'>
-              <p className='my-0'>giu 2021 - nov 2021 - 6 mesi</p>
+              <p className='my-0'>
+                {formatDate(experience.startDate)} - {formatDate(experience.endDate)}
+              </p>
             </Col>
             <Col xs={12} className='text-secondary '>
-              <p>Rimini, Emilia Romagna, Italia - In sede</p>
+              <p>{experience.area}</p>
             </Col>
           </Row>
           <Row>
             <Col xs={12}>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, non id est libero inventore blanditiis possimus
-                laudantium amet nulla delectus odit repudiandae, rem reprehenderit accusantium, corrupti iure distinctio! Vel,
-                repellat. Temporibus maiores aut hic! Ut commodi alias ea quasi sit et eos cum molestiae sequi iste laborum porro
-                assumenda, fugit quo facere. Recusandae saepe fugiat provident cumque aliquam, maiores laboriosam. Corporis libero
-                ipsam excepturi perferendis, minima, quidem sequi sint, impedit ut odit fuga modi optio placeat asperiores porro
-                eveniet architecto fugit iusto fugiat aut. Officiis accusantium tempore nulla similique provident.
-              </p>
+              <p>{experience.description}</p>
             </Col>
             <Col xs={12}>
               <p>
-                <i className='bi bi-gem' /> Ricezione Telefonica e Relazione con i clienti
+                <i className='bi bi-gem' /> {experience.role}
               </p>
             </Col>
           </Row>
