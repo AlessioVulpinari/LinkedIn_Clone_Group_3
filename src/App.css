@@ -362,7 +362,24 @@ body {
   .nav-link:hover,
   p:hover {
     text-decoration: underline;
-    color: rgb(105, 105, 255);
+    color: rgb(105, 105, 255) !important ;
     cursor: pointer;
   }
+}
+
+.fs-7 {
+  font-size: 0.9rem;
+}
+
+.fs-8 {
+  font-size: 0.75rem;
+}
+
+.nav-profile-premium {
+  text-decoration: none;
+}
+
+.nav-profile-premium:hover {
+  text-decoration: underline;
+  color: rgb(105, 105, 255) !important;
 }
