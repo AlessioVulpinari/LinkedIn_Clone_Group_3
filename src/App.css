@@ -3,7 +3,7 @@
 body {
   background-color: black;
 }
-
+/* MAIN SECTION */
 .profileContainer {
   position: absolute;
   width: 150px;
@@ -20,8 +20,13 @@ body {
 }
 
 .topMargin {
-  margin-top: 3.5rem;
+  margin-top: 1.5rem;
 }
+
+:hover.iconHover {
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
 /*ASIDE*/
 #aside {
   color: rgb(218, 218, 218);

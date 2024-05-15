@@ -38,7 +38,7 @@ const NavProfileCard = () => {
             />
             <div className='d-flex flex-column'>
               <p className='m-0 fs-5 fw-semibold'>{myProfile ? myProfile.name + " " + myProfile.surname : "Nessun dato"}</p>
-              <p className='m-0'>{myProfile ? myProfile.Title : "Nessun dato"}</p>
+              <p className='m-0'>{myProfile && myProfile.title}</p>
             </div>
           </div>
 

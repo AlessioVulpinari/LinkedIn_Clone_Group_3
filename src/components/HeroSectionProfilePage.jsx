@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { Button, Card, Col, Container, Row } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
-import { getMyProfile } from "../redux/actions"
+import { SET_PROFILE_MODAL_ON, getMyProfile } from "../redux/actions"
 
 const HeroSectionProfilePage = () => {
   const dispatch = useDispatch()
@@ -10,6 +10,7 @@ const HeroSectionProfilePage = () => {
   useEffect(() => {
     dispatch(getMyProfile())
   }, [])
+
   return (
     <Card className='text-bg-dark rounded my-2'>
       <div className='position-relative'>
@@ -23,11 +24,20 @@ const HeroSectionProfilePage = () => {
         </div>
       </div>
 
+      <Container className='d-flex justify-content-end my-2'>
+        <div
+          className='rounded-circle d-flex justify-content-center align-items-center iconHover'
+          style={{ width: 42, height: 42 }}
+          onClick={() => dispatch({ type: SET_PROFILE_MODAL_ON })}
+        >
+          <i className='bi bi-pencil' style={{ fontSize: 24 }} />
+        </div>
+      </Container>
       <Card.Body className='topMargin'>
         <Row>
           <Col xl={7} lg={6} md={12} sm={6} xs={12}>
             <Card.Title>{myProfile ? myProfile.name + " " + myProfile.surname : "Nessun dato"}</Card.Title>
-            <Card.Subtitle>{myProfile ? myProfile.Title : "Nessun dato"}</Card.Subtitle>
+            <Card.Subtitle>{myProfile ? myProfile.title : "Nessun dato"}</Card.Subtitle>
             <Card.Text className='mb-2'>EPICODE</Card.Text>
             <Card.Text>
               {myProfile ? myProfile.area : "Nessun dato"} <span> Informazioni di Contatto </span>
