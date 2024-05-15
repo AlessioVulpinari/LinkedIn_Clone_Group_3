@@ -296,7 +296,7 @@ body {
 }
 
 #profileModal h4,
-p {
+#profileModal p {
   color: white;
 }
 .dark-modal .modal-content {
@@ -336,4 +336,33 @@ p {
 }
 #saveBtn:hover {
   background-color: rgb(127, 196, 252);
+}
+
+.news-container {
+  li:hover {
+    background-color: #6c757d59;
+    cursor: pointer;
+  }
+}
+.homeFooter-container {
+  .font-footer {
+    font-size: 12px;
+  }
+
+  .dropdown-aziende {
+    .dropdown-item:hover {
+      text-decoration: underline;
+      background-color: transparent;
+    }
+    .dropdown-item:active {
+      text-decoration: underline;
+      background-color: transparent;
+    }
+  }
+  .nav-link:hover,
+  p:hover {
+    text-decoration: underline;
+    color: rgb(105, 105, 255);
+    cursor: pointer;
+  }
 }
