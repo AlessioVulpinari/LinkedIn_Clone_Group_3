@@ -3,14 +3,12 @@ import HeroSectionProfilePage from "./HeroSectionProfilePage"
 import { Col, Container, Row } from "react-bootstrap"
 import LinkedinAside from "./LinkedinAside"
 import LinkedinFooter from "./LinkedinFooter"
-import LinkedInNavBar from "./LinkedinNavBar"
 import LinkedinModal from "./LinkedinModal"
 import ExpModal from "./ExpModal"
 
 const ProfilePage = () => {
   return (
     <>
-      <LinkedInNavBar />
       <Container style={{ marginTop: 62 }}>
         <Row>
           <Col xs={12} md={7} lg={8}>
@@ -23,8 +21,8 @@ const ProfilePage = () => {
         </Row>
       </Container>
       <LinkedinFooter />
-      <LinkedinModal/>
-      <ExpModal/>
+      <LinkedinModal />
+      <ExpModal />
     </>
   )
 }
