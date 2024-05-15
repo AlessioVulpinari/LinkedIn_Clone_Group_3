@@ -1,8 +1,8 @@
-import { Button, ListGroup, Card, Container } from "react-bootstrap";
+import { Button, ListGroup, Card } from "react-bootstrap";
 
 function HomeAsideSx() {
   return (
-    <Container id="asideSx">
+    <div id="asideSx">
       <Card className="bg-dark text-light rounded">
         <div className="position-relative">
           <Card.Img
@@ -11,7 +11,10 @@ function HomeAsideSx() {
             className="img-fluid"
           />
           <div className="rounded-circle miniProfile">
-            <img className="miniPic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJBSetR7qpei5_qAWAdynAQxq_aYTpzLywSBTVc4MgTg&s" />
+            <img
+              className="miniPic"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJBSetR7qpei5_qAWAdynAQxq_aYTpzLywSBTVc4MgTg&s"
+            />
           </div>
         </div>
         <ListGroup variant="flush">
@@ -68,7 +71,7 @@ function HomeAsideSx() {
           </ListGroup.Item>
         </ListGroup>
       </Card>
-    </Container>
+    </div>
   );
 }
 

@@ -4,7 +4,7 @@ import AddPostModal from "./AddPostModal";
 function AddPostSection() {
   return (
     <>
-      <Container id="addPostSection" className="rounded bg-dark my-5 p-3 d-flex flex-column">
+      <Container id="addPostSection" className="rounded bg-dark p-3 d-flex flex-column">
         <div className="d-flex gap-2">
           <div>
             <img
@@ -12,7 +12,7 @@ function AddPostSection() {
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJBSetR7qpei5_qAWAdynAQxq_aYTpzLywSBTVc4MgTg&s"
             />
           </div>
-          <div>
+          <div className="w-100">
             <Button id="addPostBtn">Avvia un post</Button>
           </div>
         </div>
