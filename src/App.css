@@ -418,3 +418,50 @@ p {
   height: 100%;
   object-fit: cover;
 }
+
+/*ADD_POST_SECTION*/
+#addPostSection {
+  .bi-card-image {
+    color: rgb(61, 167, 253);
+  }
+  .bi-calendar2-week {
+    color: rgb(247, 215, 73);
+  }
+  .bi-layout-text-window-reverse {
+    color: rgb(253, 148, 49);
+  }
+}
+.smallPic {
+  width: 50px;
+  height: 50px;
+}
+#addPostBtn {
+  width: 100%;
+  padding: 0.8em 1.5em;
+  text-align: start;
+  border: 1px solid rgba(255, 255, 255, 0.315);
+  border-radius: 25px;
+  background-color: transparent;
+}
+#addPostBtn:hover {
+  background-color: rgba(95, 95, 95, 0.37);
+}
+.addContentBtn {
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+}
+.addContentBtn:hover {
+  background-color: rgba(124, 124, 124, 0.288);
+  border: none;
+  border-radius: 5px;
+}
+#addPostModal {
+  a {
+    font-size: 20px;
+    color: white;
+  }
+  a:hover {
+    color: rgb(175, 174, 174);
+  }
+}

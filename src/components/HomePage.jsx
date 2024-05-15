@@ -1,11 +1,12 @@
-import HomeAsideSx from "./HomeAsideSx"
+import HomeAsideSx from "./HomeAsideSx";
+/*import AddPostSection from "./AddPostSection";*/
 
 const HomePage = () => {
-    return (
-      <>
-      <HomeAsideSx/>
-      </>
-    )
-  }
-  export default HomePage
-  
+  return (
+    <>
+      <HomeAsideSx />
+      {/*<AddPostSection />*/}
+    </>
+  );
+};
+export default HomePage;
