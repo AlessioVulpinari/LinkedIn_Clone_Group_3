@@ -3,12 +3,14 @@ import { Nav, Container, Navbar, Dropdown, Form, Row, Col } from "react-bootstra
 import NavProfileCard from "./NavProfileLinkedin";
 import { useDispatch } from "react-redux";
 import { getAllJobsAction } from "../redux/actions";
+import { useNavigate } from "react-router-dom";
 
 const LinkedInNavBar = () => {
   const [navDropdownOpen, setNavDropdownOpen] = useState(false);
   const [searchDropdownOpen, setSearchDropdownOpen] = useState(false);
   const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState();
+  const navigate = useNavigate();
 
   const searchJobs = async () => {
     try {
@@ -54,6 +56,7 @@ const LinkedInNavBar = () => {
     e.preventDefault();
     searchJobs();
     setInputValue("");
+    navigate("/JobsPage");
   };
 
   return (
