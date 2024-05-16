@@ -1,8 +1,10 @@
 import {
+  RESET_FORM_EXPERIENCE_MODAL,
   SET_EXPERIENCE_AREA,
   SET_EXPERIENCE_COMPANY,
   SET_EXPERIENCE_DESCRIPTION,
   SET_EXPERIENCE_END_DATE,
+  SET_EXPERIENCE_ID,
   SET_EXPERIENCE_IMAGE,
   SET_EXPERIENCE_MODAL_OFF,
   SET_EXPERIENCE_MODAL_ON,
@@ -19,6 +21,7 @@ const initialState = {
   description: "",
   area: "",
   image: "",
+  expId: "",
 }
 
 const singleExperienceReducer = (state = initialState, action) => {
@@ -33,6 +36,12 @@ const singleExperienceReducer = (state = initialState, action) => {
       return {
         ...state,
         active: false,
+      }
+
+    case SET_EXPERIENCE_ID:
+      return {
+        ...state,
+        expId: action.payload,
       }
 
     case SET_EXPERIENCE_ROLE:
@@ -75,6 +84,18 @@ const singleExperienceReducer = (state = initialState, action) => {
       return {
         ...state,
         image: action.payload,
+      }
+
+    case RESET_FORM_EXPERIENCE_MODAL:
+      return {
+        ...state,
+        role: "",
+        company: "",
+        startDate: "",
+        endDate: "",
+        description: "",
+        area: "",
+        expId: "",
       }
 
     case SET_FORM_EXPERIENCE_MODAL:

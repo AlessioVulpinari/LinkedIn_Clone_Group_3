@@ -21,6 +21,7 @@ export const SET_FORM_AREA = "SET_FORM_AREA"
 
 // EXPERIENCE ARRAY
 export const SET_EXPERIENCES = "SET_EXPERIENCES"
+export const ADD_EXPERIENCE = "ADD_EXPERIENCE"
 export const REMOVE_EXPERIENCE = "REMOVE_EXPERIENCE"
 
 // SINGLE EXPERIENCE
@@ -34,6 +35,8 @@ export const SET_EXPERIENCE_DESCRIPTION = "SET_EXPERIENCE_DESCRIPTION"
 export const SET_EXPERIENCE_AREA = "SET_EXPERIENCE_AREA"
 export const SET_EXPERIENCE_IMAGE = "SET_EXPERIENCE_IMAGE"
 export const SET_FORM_EXPERIENCE_MODAL = "SET_FORM_EXPERIENCE_MODAL"
+export const RESET_FORM_EXPERIENCE_MODAL = "RESET_FORM_EXPERIENCE_MODAL"
+export const SET_EXPERIENCE_ID = "SET_EXPERIENCE_ID"
 
 // UTILITY
 
@@ -103,7 +106,7 @@ export const postProfileExperience = (id = "6641c494167e530015fa697f", obj) => {
   return async (dispatch) => {
     try {
       const response = await fetch(ID_PROFILE_END_POINT + id + "/experiences", {
-        method: "PUT",
+        method: "POST",
         body: JSON.stringify(obj),
         headers: {
           "Content-Type": "application/json",
@@ -115,7 +118,8 @@ export const postProfileExperience = (id = "6641c494167e530015fa697f", obj) => {
       if (response.ok) {
         const experiences = await response.json()
 
-        dispatch({ type: SET_EXPERIENCES, payload: experiences })
+        dispatch({ type: ADD_EXPERIENCE, payload: experiences })
+        dispatch({ type: RESET_FORM_EXPERIENCE_MODAL })
       } else {
         if (response.status === 400) {
           throw new Error("400: Bad Request")
@@ -151,6 +155,69 @@ export const postProfileExperience = (id = "6641c494167e530015fa697f", obj) => {
       }
     } catch (error) {
       console.log(error)
+    } finally {
+      dispatch({ type: SET_EXPERIENCE_MODAL_OFF })
+    }
+  }
+}
+
+export const modifyProfileExperience = (id = "6641c494167e530015fa697f", obj) => {
+  console.log(obj.expId)
+  return async (dispatch) => {
+    try {
+      const response = await fetch(ID_PROFILE_END_POINT + id + "/experiences/" + obj.expId, {
+        method: "PUT",
+        body: JSON.stringify(obj),
+        headers: {
+          "Content-Type": "application/json",
+          authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQxYzQ5NDE2N2U1MzAwMTVmYTY5N2YiLCJpYXQiOjE3MTU1ODYxOTYsImV4cCI6MTcxNjc5NTc5Nn0.E4rFzec_PCvcUXZGUjj_lOZjXWSmTMzgHKFcZMkg-wg",
+        },
+      })
+
+      if (response.ok) {
+        // const experiences = await response.json()
+
+        // dispatch({ type: ADD_EXPERIENCE, payload: experiences })
+        dispatch({ type: RESET_FORM_EXPERIENCE_MODAL })
+      } else {
+        if (response.status === 400) {
+          throw new Error("400: Bad Request")
+        }
+        if (response.status === 401) {
+          throw new Error("401: Unauthorized")
+        }
+        if (response.status === 402) {
+          throw new Error("402: Payment Required")
+        }
+        if (response.status === 403) {
+          throw new Error("403: Forbidden")
+        }
+        if (response.status === 404) {
+          throw new Error("404: Not Found")
+        }
+        if (response.status === 405) {
+          throw new Error("405: Method Not Allowed")
+        }
+        if (response.status === 406) {
+          throw new Error("406: Not Acceptable")
+        }
+        if (response.status === 407) {
+          throw new Error("407: Proxy Authentication Required")
+        }
+        if (response.status === 408) {
+          throw new Error("408: Request Timeout")
+        }
+        if (response.status === 500) {
+          throw new Error("500: Server Error")
+        }
+        throw new Error("Generic Fetch Error")
+      }
+    } catch (error) {
+      console.log(error)
+    } finally {
+      dispatch({ type: SET_EXPERIENCE_MODAL_OFF })
+      dispatch(getProfileExperiences())
     }
   }
 }

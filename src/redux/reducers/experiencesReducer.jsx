@@ -1,4 +1,4 @@
-import { SET_EXPERIENCES } from "../actions"
+import { ADD_EXPERIENCE, SET_EXPERIENCES } from "../actions"
 
 const initialState = {
   content: [],
@@ -10,6 +10,12 @@ const experiencesReducer = (state = initialState, action) => {
       return {
         ...state,
         content: action.payload,
+      }
+
+    case ADD_EXPERIENCE:
+      return {
+        ...state,
+        content: [...state.content, action.payload],
       }
 
     // case REMOVE_EXPERIENCE:
