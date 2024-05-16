@@ -61,7 +61,7 @@ const HomeFooter = () => {
             <p className="pe-3 pointer">Scarica l&apos;app di LinkedIn</p>
             <p className="pe-3 pointer">Altro</p>
           </Col>
-          <Col className="col-12 font-footer d-flex justify-content-center text-secondary">
+          <Col className="col-12 font-footer d-flex align-items-center justify-content-center text-secondary">
             <Image
               src="https://static.licdn.com/aero-v1/sc/h/34bl5fp6gi8t0nscavw94xa7x"
               x="0"

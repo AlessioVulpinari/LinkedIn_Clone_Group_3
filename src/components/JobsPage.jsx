@@ -3,8 +3,12 @@ import JobsPageAside from "./JobsPageAside";
 import JobsPageMain from "./JobsPageMain";
 import JobsPageSearch from "./JobsPageSearch";
 import HomeFooter from "./HomeFooter";
+import { useLocation } from "react-router-dom";
 
 const JobsPage = () => {
+  const location = useLocation();
+  const jobs = location.state?.jobs || [];
+
   return (
     <Container style={{ marginTop: 90 }} fluid="xl">
       <Row className="mb-3 justify-content-end">
@@ -12,7 +16,7 @@ const JobsPage = () => {
           <JobsPageAside />
         </Col>
         <Col xs={12} md={6} lg={5} xl={6}>
-          <JobsPageSearch />
+          <JobsPageSearch jobs={jobs} />
           <JobsPageMain />
         </Col>
         <Col xs={12} md={8} lg={4} xl={3}>
