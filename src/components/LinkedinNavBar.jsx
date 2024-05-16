@@ -18,6 +18,7 @@ const LinkedInNavBar = () => {
       if (res.ok) {
         const jobs = await res.json();
         dispatch(getAllJobsAction(jobs.data));
+        navigate("/", { state: { jobs: jobs.data } });
       } else {
         throw new Error(`Errore nella fetch dei jobs`);
       }
@@ -56,7 +57,6 @@ const LinkedInNavBar = () => {
     e.preventDefault();
     searchJobs();
     setInputValue("");
-    navigate("/JobsPage");
   };
 
   return (
