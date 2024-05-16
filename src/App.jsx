@@ -4,6 +4,7 @@ import ProfilePage from "./components/ProfilePage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LinkedInNavBar from "./components/LinkedinNavBar";
 import Home from "./components/HomePageLinkedin";
+import JobsPage from "./components/JobsPage";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
         <LinkedInNavBar />
         <Routes>
           <Route path="/profilePage" element={<ProfilePage />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/homePage" element={<Home />} />
+          <Route path="/" element={<JobsPage />} />
         </Routes>
       </BrowserRouter>
     </>

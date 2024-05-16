@@ -1,9 +1,10 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit"
-import serchProfileReducer from "../reducers/searchMyProfileReducer"
-import postReducers from "../reducers/postReducers"
-import myProfileModalReducer from "../reducers/myProfileModalReducer"
-import singleExperienceReducer from "../reducers/singleExperienceReducer"
-import experiencesReducer from "../reducers/experiencesReducer"
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import serchProfileReducer from "../reducers/searchMyProfileReducer";
+import postReducers from "../reducers/postReducers";
+import myProfileModalReducer from "../reducers/myProfileModalReducer";
+import singleExperienceReducer from "../reducers/singleExperienceReducer";
+import experiencesReducer from "../reducers/experiencesReducer";
+import jobsReducers from "../reducers/jobsReducers";
 
 const rootReducer = combineReducers({
   profile: serchProfileReducer,
@@ -11,10 +12,11 @@ const rootReducer = combineReducers({
   posts: postReducers,
   reducerModal: singleExperienceReducer,
   experinces: experiencesReducer,
-})
+  jobs: jobsReducers,
+});
 
 const store = configureStore({
   reducer: rootReducer,
-})
+});
 
-export default store
+export default store;
