@@ -3,8 +3,76 @@
 body {
   background-color: black;
 }
-/* MAIN SECTION */
-/*PROFILE_PAGE*/
+/*PROFILE_PAGE_MAIN*/
+#heroProfile {
+  line-height: 1.4;
+  .profileName {
+    font-size: 25px;
+    font-weight: 700;
+  }
+  .profileName:hover {
+    text-decoration: underline;
+  }
+  a {
+    text-decoration: none;
+    color: rgb(100, 183, 250);
+    font-weight: 500;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .companyName {
+    color: white;
+  }
+  .companyName:hover {
+    color: rgb(100, 183, 250);
+  }
+  .location {
+    color: rgba(255, 255, 255, 0.466);
+  }
+  .bgCustom {
+    background-color: #61616177;
+  }
+  .dispBtn {
+    background-color: rgb(100, 183, 250);
+    color: #191a1a;
+    border: none;
+    font-weight: 600;
+  }
+  .dispBtn:hover {
+    background-color: rgb(127, 196, 252);
+  }
+  .addSectionBtn {
+    background-color: transparent;
+    border: 1px solid rgb(100, 183, 250);
+    color: rgb(100, 183, 250);
+    font-weight: 600;
+  }
+  .addSectionBtn:hover {
+    background-color: rgba(100, 182, 250, 0.212);
+    border: 1px solid rgb(195, 225, 250);
+    color: rgb(195, 225, 250);
+  }
+  .altroBtn {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.685);
+    border: 1px solid rgba(255, 255, 255, 0.685);
+    font-weight: 600;
+  }
+  .altroBtn:hover {
+    background-color: rgba(252, 252, 252, 0.11);
+    border: 1px solid rgb(253, 253, 253);
+    color: rgb(255, 255, 255);
+  }
+  .modBtn {
+    background-color: transparent;
+    border: none;
+    border-radius: 25px;
+  }
+  .modBtn:hover {
+    background-color: rgba(252, 252, 252, 0.11);
+  }
+}
 .profileContainer {
   position: absolute;
   width: 150px;
@@ -13,21 +81,33 @@ body {
   left: 30px;
   overflow: hidden;
 }
-
 .profilePick {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
 .topMargin {
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
 }
-
-:hover.iconHover {
-  background-color: rgba(128, 128, 128, 0.2);
+#expSection {
+  line-height: 1.2;
+  .addBtn {
+    background-color: transparent;
+    border: none;
+    border-radius: 25px;
+  }
+  .addBtn:hover {
+    background-color: rgba(252, 252, 252, 0.11);
+  }
+  a {
+    text-decoration: none;
+    color: rgb(100, 183, 250);
+    font-weight: 500;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
 }
-
 /*ASIDE_PROFILEPAGE*/
 #aside {
   color: rgb(218, 218, 218);
