@@ -550,3 +550,38 @@ body {
     color: rgb(175, 174, 174);
   }
 }
+
+/*JOBS_PAGE_MAIN*/
+#jobsMain {
+  margin-top: 150px;
+  p,
+  h4,
+  h5,
+  h6 {
+    margin: 0.2em;
+  }
+  h6 {
+    font-size: 14px;
+  }
+  img {
+    width: 60px;
+  }
+  .miniPicture {
+    width: 45px;
+  }
+  a {
+    color: rgb(100, 183, 250);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .xBtn {
+    background-color: transparent;
+    border-radius: 25px;
+    border: solid 1px transparent;
+  }
+  .xBtn:hover {
+    background-color: #6c757d5b;
+  }
+}
