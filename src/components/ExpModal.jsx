@@ -59,7 +59,7 @@ function ExpModal() {
               <Form.Control
                 type='date'
                 required
-                value={selectedExperience && selectedExperience.startDate}
+                value={selectedExperience && selectedExperience.startDate.split("T")[0]}
                 onChange={(e) => dispatch({ type: SET_EXPERIENCE_START_DATE, payload: e.target.value })}
               />
             </Form.Group>
@@ -68,7 +68,7 @@ function ExpModal() {
               <Form.Control
                 type='date'
                 required
-                value={selectedExperience && selectedExperience.endDate}
+                value={selectedExperience && selectedExperience.endDate.split("T")[0]}
                 onChange={(e) => dispatch({ type: SET_EXPERIENCE_END_DATE, payload: e.target.value })}
               />
             </Form.Group>
