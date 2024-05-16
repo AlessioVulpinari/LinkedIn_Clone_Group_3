@@ -12,9 +12,9 @@ function App() {
       <BrowserRouter>
         <LinkedInNavBar />
         <Routes>
-          <Route path="/profilePage" element={<ProfilePage />} />
+          <Route path="/profilePage" element={<JobsPage />} />
           <Route path="/homePage" element={<Home />} />
-          <Route path="/" element={<JobsPage />} />
+          <Route path="/" element={<ProfilePage />} />
         </Routes>
       </BrowserRouter>
     </>
