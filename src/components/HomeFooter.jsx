@@ -3,7 +3,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 const HomeFooter = () => {
   return (
     <>
-      <Container className="mt-3 homeFooter-container">
+      <Container className="mt-4 homeFooter-container">
         <Row className="justify-content-center">
           <Col className="col-11 font-footer d-flex flex-wrap justify-content-center align-items-center text-secondary">
             <p className="pe-3 pointer">Informazioni</p>
@@ -70,7 +70,7 @@ const HomeFooter = () => {
               height="14"
               className="pe-2"
             ></Image>
-            <p className="pe-2">Linkedin Corporation &copy; {new Date().getFullYear()} </p>
+            <p className="pe-2 noLink">Linkedin Corporation &copy; {new Date().getFullYear()} </p>
           </Col>
         </Row>
       </Container>

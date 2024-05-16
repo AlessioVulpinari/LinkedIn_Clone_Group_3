@@ -28,7 +28,7 @@ body {
   background-color: rgba(128, 128, 128, 0.2);
 }
 
-/*ASIDE*/
+/*ASIDE_PROFILEPAGE*/
 #aside {
   color: rgb(218, 218, 218);
 }
@@ -83,7 +83,8 @@ body {
   color: white;
   border: 1px solid transparent !important;
 }
-/*FOOTER*/
+
+/*FOOTER_PROFILEPAGE*/
 #footer {
   color: gray;
   font-size: 13px;
@@ -125,6 +126,7 @@ body {
 #footer p {
   margin: 0;
 }
+
 /*NAVBAR*/
 .nav-container {
   .navbar {
@@ -296,6 +298,7 @@ body {
     }
   }
 }
+
 /*MODALS*/
 .modal {
   --bs-modal-width: 750px;
@@ -344,6 +347,7 @@ body {
   background-color: rgb(127, 196, 252);
 }
 
+/*ASIDE_DX_HOMEPAGE*/
 .news-container {
   li:hover {
     background-color: #6c757d59;
@@ -351,6 +355,7 @@ body {
   }
 }
 .homeFooter-container {
+  line-height: 0.8;
   .font-footer {
     font-size: 12px;
   }
@@ -368,11 +373,19 @@ body {
   .nav-link:hover,
   p:hover {
     text-decoration: underline;
-    color: rgb(105, 105, 255) !important ;
+    color: rgb(100, 183, 250);
     cursor: pointer;
   }
+  .noLink {
+    margin-top: 0.8em;
+    color: white;
+    font-size: 14px;
+  }
+  .noLink:hover {
+    text-decoration: none;
+    color: white;
+  }
 }
-
 .fs-7 {
   font-size: 0.9rem;
 }
@@ -389,7 +402,7 @@ body {
   text-decoration: underline;
   color: rgb(105, 105, 255) !important;
 }
-/*HOME_PAGE*/
+/*ASIDE_SX_HOMEPAGE*/
 .toProfilePage {
   color: white;
   text-decoration: none;
