@@ -358,6 +358,7 @@ body {
   line-height: 0.8;
   .font-footer {
     font-size: 12px;
+    font-weight: 700;
   }
 
   .dropdown-aziende {
@@ -559,5 +560,35 @@ body {
   }
   .xBtn:hover {
     background-color: #6c757d5b;
+  }
+}
+
+/*JOBS_PAGE_ASIDE*/
+#jobsAside {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.6;
+  i {
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.699);
+    cursor: pointer;
+  }
+  a {
+    color: rgba(255, 255, 255, 0.699);
+    text-decoration: none;
+  }
+  .asideBtn {
+    color: rgb(100, 183, 250);
+    background-color: transparent;
+    border: 1px solid rgb(100, 183, 250);
+    border-radius: 25px;
+    padding: 1em;
+    i {
+      color: rgb(100, 183, 250);
+    }
+  }
+  .asideBtn:hover {
+    background-color: rgba(100, 182, 250, 0.212);
+    border: 1px solid rgb(195, 225, 250);
   }
 }
