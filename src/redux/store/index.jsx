@@ -6,14 +6,18 @@ import singleExperienceReducer from "../reducers/singleExperienceReducer"
 import experiencesReducer from "../reducers/experiencesReducer"
 import jobsReducers from "../reducers/jobsReducers"
 import addPostModalReducer from "../reducers/addPostModalReducer"
+import selectedProfile from "../reducers/selectedProfile"
+import selectedProfileExp from "../reducers/selectedProfileExp"
 
 const rootReducer = combineReducers({
   profile: serchProfileReducer,
+  user: selectedProfile,
   profileModal: myProfileModalReducer,
   posts: postReducers,
   postModal: addPostModalReducer,
   reducerModal: singleExperienceReducer,
   experinces: experiencesReducer,
+  userExperinces: selectedProfileExp,
   jobs: jobsReducers,
 })
 

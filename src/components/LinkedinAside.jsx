@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Button, ListGroup, Container } from "react-bootstrap"
 import { useSelector } from "react-redux"
+import { Link } from "react-router-dom"
 
 function LinkedinAside() {
   const [user, setUser] = useState()
@@ -84,9 +85,9 @@ function LinkedinAside() {
                         <img className='rounded-circle' src={randomUsers.image} alt='profile picture' />
                       </div>
                       <div>
-                        <a href='#115'>
+                        <Link to={`/${randomUsers._id}`}>
                           {randomUsers.name} {randomUsers.surname}
-                        </a>
+                        </Link>
                         <p>{randomUsers.title}</p>
                         <Button className='addBtn'>
                           <i className='bi bi-person-plus-fill'></i> Collegati
