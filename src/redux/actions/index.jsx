@@ -60,7 +60,6 @@ export const SET_JOBS_LOADING_OFF = "SET_JOBS_LOADING_OFF"
 export const SEARCH_JOBS = "SEARCH_JOBS"
 
 // UTILITY
-
 export const formatDate = (date) => {
   const year = date.slice(0, 4)
   const month = date.slice(5, 7)
@@ -73,7 +72,6 @@ export const getProfileExperiences = (id = "6641c494167e530015fa697f") => {
   return async (dispatch) => {
     try {
       const response = await fetch(ID_PROFILE_END_POINT + id + "/experiences", {
-        // body: JSON.stringify(obj),
         headers: {
           authorization:
             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQxYzQ5NDE2N2U1MzAwMTVmYTY5N2YiLCJpYXQiOjE3MTU1ODYxOTYsImV4cCI6MTcxNjc5NTc5Nn0.E4rFzec_PCvcUXZGUjj_lOZjXWSmTMzgHKFcZMkg-wg",
@@ -183,7 +181,6 @@ export const postProfileExperience = (id = "6641c494167e530015fa697f", obj) => {
 }
 
 export const modifyProfileExperience = (id = "6641c494167e530015fa697f", obj) => {
-  console.log(obj.expId)
   return async (dispatch) => {
     try {
       const response = await fetch(ID_PROFILE_END_POINT + id + "/experiences/" + obj.expId, {
@@ -197,9 +194,6 @@ export const modifyProfileExperience = (id = "6641c494167e530015fa697f", obj) =>
       })
 
       if (response.ok) {
-        // const experiences = await response.json()
-
-        // dispatch({ type: ADD_EXPERIENCE, payload: experiences })
         dispatch({ type: RESET_FORM_EXPERIENCE_MODAL })
       } else {
         if (response.status === 400) {
@@ -238,6 +232,61 @@ export const modifyProfileExperience = (id = "6641c494167e530015fa697f", obj) =>
       console.log(error)
     } finally {
       dispatch({ type: SET_EXPERIENCE_MODAL_OFF })
+      dispatch(getProfileExperiences())
+    }
+  }
+}
+
+export const deleteProfileExperience = (id = "6641c494167e530015fa697f", expId) => {
+  return async (dispatch) => {
+    try {
+      const response = await fetch(ID_PROFILE_END_POINT + id + "/experiences/" + expId, {
+        method: "DELETE",
+        headers: {
+          authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQxYzQ5NDE2N2U1MzAwMTVmYTY5N2YiLCJpYXQiOjE3MTU1ODYxOTYsImV4cCI6MTcxNjc5NTc5Nn0.E4rFzec_PCvcUXZGUjj_lOZjXWSmTMzgHKFcZMkg-wg",
+        },
+      })
+
+      if (response.ok) {
+        console.log(response)
+      } else {
+        if (response.status === 400) {
+          throw new Error("400: Bad Request")
+        }
+        if (response.status === 401) {
+          throw new Error("401: Unauthorized")
+        }
+        if (response.status === 402) {
+          throw new Error("402: Payment Required")
+        }
+        if (response.status === 403) {
+          throw new Error("403: Forbidden")
+        }
+        if (response.status === 404) {
+          throw new Error("404: Not Found")
+        }
+        if (response.status === 405) {
+          throw new Error("405: Method Not Allowed")
+        }
+        if (response.status === 406) {
+          throw new Error("406: Not Acceptable")
+        }
+        if (response.status === 407) {
+          throw new Error("407: Proxy Authentication Required")
+        }
+        if (response.status === 408) {
+          throw new Error("408: Request Timeout")
+        }
+        if (response.status === 500) {
+          throw new Error("500: Server Error")
+        }
+        throw new Error("Generic Fetch Error")
+      }
+    } catch (error) {
+      console.log(error)
+    } finally {
+      // dispatch({ type: SET_EXPERIENCE_MODAL_OFF })
       dispatch(getProfileExperiences())
     }
   }
