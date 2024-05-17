@@ -27,15 +27,15 @@ function AddCommentSection({ postId, addComment }) {
             <img className="rounded-circle commentPic" src={myProfile && myProfile.image} alt="profile" />
           </div>
           <div className="w-100 d-flex gap-1 align-items-center justify-content-between">
-            <InputGroup variant="dark">
+            <InputGroup className="custom-input-group">
               <Form.Control
                 className="addComment"
-                type="text"
-                placeholder="Aggiungi un commento..."
                 value={commentText}
                 onChange={(e) => setCommentText(e.target.value)}
+                type="text"
+                placeholder="Aggiungi un commento..."
               />
-              <Button type="button" className="commentBtns">
+              <Button className="commentBtns">
                 <i className="bi bi-emoji-dizzy"></i>
               </Button>
               <Button type="button" className="commentBtns">
