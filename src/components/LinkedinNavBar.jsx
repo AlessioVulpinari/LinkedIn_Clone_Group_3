@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Nav, Container, Navbar, Dropdown, Form, Row, Col } from "react-bootstrap";
 import NavProfileCard from "./NavProfileLinkedin";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getAllJobsAction } from "../redux/actions";
 import { NavLink, useNavigate } from "react-router-dom";
 
@@ -11,6 +11,8 @@ const LinkedInNavBar = () => {
   const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
+  const myProfile = useSelector((state) => state.profile.content);
+  const [premiumText, setPremiumText] = useState("");
 
   const searchJobs = async () => {
     try {
@@ -18,7 +20,7 @@ const LinkedInNavBar = () => {
       if (res.ok) {
         const jobs = await res.json();
         dispatch(getAllJobsAction(jobs.data));
-        navigate("/jobsPage", { state: { jobs: jobs.data } });
+        navigate("/jobsPage", { state: { jobs: jobs.data, searchInputValue: inputValue, myProfile: myProfile } });
       } else {
         throw new Error(`Errore nella fetch dei jobs`);
       }
@@ -56,8 +58,13 @@ const LinkedInNavBar = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     searchJobs();
+    premiumRandom();
     setInputValue("");
   };
+
+  useEffect(() => {
+    setPremiumText(premiumRandom());
+  }, []);
 
   return (
     <header className="nav-container">
@@ -145,7 +152,7 @@ const LinkedInNavBar = () => {
               <div className="dropdown-toggle d-none d-md-block">Per le aziende</div>
             </Nav.Link>
             <Nav.Link className="d-none d-md-flex flex-column justify-content-center align-items-center premium-link ms-0 ms-md-2">
-              {premiumRandom()}
+              {premiumText}
             </Nav.Link>
           </Nav>
 
@@ -173,7 +180,7 @@ const LinkedInNavBar = () => {
                   <i className="bi bi-grid-3x3-gap-fill d-flex nav-icon"></i>
                   <div className="dropdown-toggle d-none d-md-block">Per le aziende</div>
                 </Nav.Link>
-                <Nav.Link className="d-flex d-xs-none premium-link m-0 p-0">{premiumRandom()}</Nav.Link>
+                <Nav.Link className="d-flex d-xs-none premium-link m-0 p-0">{premiumText}</Nav.Link>
               </div>
             </Dropdown.Menu>
           </Dropdown>

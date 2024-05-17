@@ -8,6 +8,8 @@ import { useLocation } from "react-router-dom";
 const JobsPage = () => {
   const location = useLocation();
   const jobs = location.state?.jobs || [];
+  const searchInputValue = location.state?.searchInputValue || "";
+  const myProfile = location.state?.myProfile || [];
 
   return (
     <Container style={{ marginTop: 90 }} fluid="xl">
@@ -16,7 +18,7 @@ const JobsPage = () => {
           <JobsPageAside />
         </Col>
         <Col xs={12} md={6} lg={5} xl={6}>
-          <JobsPageSearch jobs={jobs} />
+          <JobsPageSearch jobs={jobs} searchInputValue={searchInputValue} myProfile={myProfile} />
           <JobsPageMain />
         </Col>
         <Col xs={12} md={8} lg={4} xl={3}>

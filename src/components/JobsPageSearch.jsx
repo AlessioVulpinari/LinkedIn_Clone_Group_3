@@ -1,15 +1,19 @@
 import { Container, ListGroup, Button } from "react-bootstrap";
 import logo from "../assets/logo.jpg";
 
-function JobsPageSearch({ jobs }) {
+function JobsPageSearch({ jobs, searchInputValue, myProfile }) {
   return (
     <div id="jobsMain" className="bg-dark text-light rounded mb-3">
       <Container className="p-3 pb-0">
-        <h4>Input Ricerca</h4>
+        <h4>
+          {searchInputValue
+            ? searchInputValue.charAt(0).toUpperCase() + searchInputValue.slice(1).toLowerCase()
+            : "Ricerca Lavori"}
+        </h4>
         <p className="text-secondary">I risultati della tua ricerca</p>
         <ListGroup className="list-group-flush">
           {jobs.length > 0 &&
-            jobs.slice(0, 3).map((job) => (
+            jobs.slice(0, 10).map((job) => (
               <ListGroup.Item className="bg-dark text-light border-secondary py-3" key={job._id}>
                 <div className="d-flex justify-content-between">
                   <div className="d-flex gap-3">
@@ -17,7 +21,7 @@ function JobsPageSearch({ jobs }) {
                       <img src={logo} alt="profile picture" />
                     </div>
                     <div>
-                      <a href="#">
+                      <a href="#350">
                         <h5>{job.title}</h5>
                       </a>
                       <p>{job.company_name}</p>
@@ -25,7 +29,7 @@ function JobsPageSearch({ jobs }) {
                       <div className="d-flex gap-2 align-items-center mt-2">
                         <img
                           className="rounded-circle miniPicture"
-                          src="https://static.vecteezy.com/system/resources/previews/006/732/119/non_2x/account-icon-sign-symbol-logo-design-free-vector.jpg"
+                          src={myProfile && myProfile.image}
                           alt="profile picture"
                         />
                         <h6 className="text-secondary">Il tuo profilo è in linea con questa offerta di lavoro</h6>

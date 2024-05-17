@@ -7,6 +7,7 @@ import logo from "../assets/logo.jpg";
 function JobsPageMain() {
   const dispatch = useDispatch();
   const jobs = useSelector((state) => state.jobs.jobs);
+  const myProfile = useSelector((state) => state.profile.content);
 
   useEffect(() => {
     dispatch(getAllJobsAction());
@@ -35,7 +36,7 @@ function JobsPageMain() {
                       <div className="d-flex gap-2 align-items-center mt-2">
                         <img
                           className="rounded-circle miniPicture"
-                          src="https://static.vecteezy.com/system/resources/previews/006/732/119/non_2x/account-icon-sign-symbol-logo-design-free-vector.jpg"
+                          src={myProfile && myProfile.image}
                           alt="profile picture"
                         />
                         <h6 className="text-secondary">Il tuo profilo è in linea con questa offerta di lavoro</h6>
