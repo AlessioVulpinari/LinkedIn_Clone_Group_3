@@ -1,9 +1,10 @@
 import { Container, Button } from "react-bootstrap"
-import AddPostModal from "./AddPostModal"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { SET_POST_MODAL_ON } from "../redux/actions"
 
 function AddPostSection() {
   const myProfile = useSelector((state) => state.profile.content)
+  const dispatch = useDispatch()
   return (
     <>
       <Container id='addPostSection' className='rounded bg-dark p-3 d-flex flex-column'>
@@ -12,7 +13,9 @@ function AddPostSection() {
             <img className='rounded-circle smallPic' src={myProfile && myProfile.image} />
           </div>
           <div className='w-100'>
-            <Button id='addPostBtn'>Avvia un post</Button>
+            <Button id='addPostBtn' type='button' onClick={() => dispatch({ type: SET_POST_MODAL_ON })}>
+              Avvia un post
+            </Button>
           </div>
         </div>
         <div className='d-flex justify-content-between mt-3'>
@@ -33,7 +36,6 @@ function AddPostSection() {
           </div>
         </div>
       </Container>
-      <AddPostModal />
     </>
   )
 }

@@ -1,19 +1,21 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import serchProfileReducer from "../reducers/searchMyProfileReducer";
-import postReducers from "../reducers/postReducers";
-import myProfileModalReducer from "../reducers/myProfileModalReducer";
-import singleExperienceReducer from "../reducers/singleExperienceReducer";
-import experiencesReducer from "../reducers/experiencesReducer";
-import jobsReducers from "../reducers/jobsReducers";
+import { combineReducers, configureStore } from "@reduxjs/toolkit"
+import serchProfileReducer from "../reducers/searchMyProfileReducer"
+import postReducers from "../reducers/postReducers"
+import myProfileModalReducer from "../reducers/myProfileModalReducer"
+import singleExperienceReducer from "../reducers/singleExperienceReducer"
+import experiencesReducer from "../reducers/experiencesReducer"
+import jobsReducers from "../reducers/jobsReducers"
+import addPostModalReducer from "../reducers/addPostModalReducer"
 
 const rootReducer = combineReducers({
   profile: serchProfileReducer,
   profileModal: myProfileModalReducer,
   posts: postReducers,
+  postModal: addPostModalReducer,
   reducerModal: singleExperienceReducer,
   experinces: experiencesReducer,
   jobs: jobsReducers,
-});
+})
 
 const store = configureStore({
   reducer: rootReducer,
@@ -22,6 +24,6 @@ const store = configureStore({
       immutableCheck: false,
       serializableCheck: false,
     }),
-});
+})
 
-export default store;
+export default store

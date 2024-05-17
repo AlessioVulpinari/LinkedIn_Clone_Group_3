@@ -18,8 +18,6 @@ function ExpModal() {
   const active = useSelector((state) => state.reducerModal.active)
   const selectedExperience = useSelector((state) => state.reducerModal)
 
-  // const option = { dateStyle: "short" }
-
   const handleModalOnClose = () => {
     dispatch({ type: SET_EXPERIENCE_MODAL_OFF })
     dispatch({ type: RESET_FORM_EXPERIENCE_MODAL })
