@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Modal, Form } from "react-bootstrap";
+import { Button, Modal, Form, Dropdown } from "react-bootstrap";
 
 function AddPostModal() {
   const [show, setShow] = useState(false);
@@ -13,12 +13,43 @@ function AddPostModal() {
         <i className="bi bi-pencil"></i>+Post
       </Button>
       <Modal id="addPostModal" className="dark-modal" show={show} onHide={handleClose}>
-        <Modal.Header closeButton closeVariant="white"></Modal.Header>
+        <Modal.Header closeButton closeVariant="white" className="align-items-start">
+          <Dropdown className="mt-3">
+            <Dropdown.Toggle
+              variant="outline"
+              id="dropdown-basic"
+              className="d-flex align-items-center gap-2 text-light modalDropdown"
+            >
+              <div className="d-flex gap-2 align-items-center">
+                <img
+                  className="profilePicPost rounded-circle"
+                  src="https://www.donnad.it/sites/default/files/styles/r_visual_d/public/201936/Sognare-gattini-piccoli.jpg?itok=yX04jVWk"
+                  alt="profile image"
+                />
+                <div className="textAlign">
+                  <h5> Nome Cognome</h5>
+                  <p>Pubblica: Chiunque</p>
+                </div>
+              </div>
+            </Dropdown.Toggle>
+            <Dropdown.Menu variant="dark">
+              <Dropdown.Item href="#">Chi può vedere i tuoi post?</Dropdown.Item>
+              <Dropdown.Item href="#">Controllo dei commenti</Dropdown.Item>
+              <Dropdown.Item href="#">Partnership del brand</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </Modal.Header>
         <Modal.Body style={{ height: "400px" }}>
           <div className="d-flex flex-column justify-content-between">
             <Form className="text-light">
               <Form.Group className="mb-3" controlId="addPostControlTextarea">
-                <Form.Control as="textarea" placeholder="Di cosa vorresti parlare?" rows={5} />
+                <Form.Control
+                  className="textArea"
+                  as="textarea"
+                  autoFocus
+                  placeholder="Di cosa vorresti parlare?"
+                  rows={9}
+                />
               </Form.Group>
             </Form>
             <div>

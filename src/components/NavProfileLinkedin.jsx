@@ -53,7 +53,7 @@ const NavProfileCard = () => {
             </div>
           </div>
 
-          <Button as={NavLink} to="/ProfilePage" variant="outline-primary" className="rounded-5 py-0 fw-semibold">
+          <Button as={NavLink} to="/ProfilePage" variant="outline-primary" className="rounded-5 py-0 profileBtn">
             Visualizza profilo
           </Button>
         </div>

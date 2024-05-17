@@ -350,6 +350,16 @@ body {
     button {
       font-size: 0.9rem;
     }
+    .profileBtn {
+      background-color: transparent;
+      color: rgb(100, 183, 250);
+      border: 1px solid rgb(100, 183, 250);
+      font-weight: 600;
+    }
+    .profileBtn:hover {
+      background-color: rgba(100, 182, 250, 0.11);
+      border: 1px solid rgb(195, 225, 250);
+    }
   }
 
   .bi-square-fill {
@@ -629,6 +639,34 @@ body {
   }
   a:hover {
     color: rgb(175, 174, 174);
+  }
+  .textArea {
+    border: none;
+    color: white;
+    font-size: 20px;
+  }
+  .textArea::placeholder {
+    color: rgba(255, 255, 255, 0.527);
+    font-size: 20px;
+  }
+  .form-control:focus {
+    outline: none;
+  }
+  .profilePicPost {
+    width: 60px;
+    height: 60px;
+  }
+  h5,
+  p {
+    margin-bottom: 0.1em;
+  }
+  .modalDropdown:focus {
+    border: none;
+    background-color: transparent;
+  }
+  .modalDropdown:hover {
+    border: none;
+    background-color: #6c757d44;
   }
 }
 
