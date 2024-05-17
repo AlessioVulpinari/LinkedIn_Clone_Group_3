@@ -1,15 +1,15 @@
-import ExperincesSection from "./ExperincesSection"
-import HeroSectionProfilePage from "./HeroSectionProfilePage"
-import { Col, Container, Row } from "react-bootstrap"
-import LinkedinAside from "./LinkedinAside"
-import LinkedinFooter from "./LinkedinFooter"
-import LinkedinModal from "./LinkedinModal"
-import ExpModal from "./ExpModal"
+import ExperincesSection from "./ExperincesSection";
+import HeroSectionProfilePage from "./HeroSectionProfilePage";
+import { Col, Container, Row } from "react-bootstrap";
+import LinkedinAside from "./LinkedinAside";
+import LinkedinFooter from "./LinkedinFooter";
+import LinkedinModal from "./LinkedinModal";
+import ExpModal from "./ExpModal";
 
 const ProfilePage = () => {
   return (
     <>
-      <Container style={{ marginTop: 62 }}>
+      <Container style={{ marginTop: 90 }}>
         <Row>
           <Col xs={12} md={7} lg={8}>
             <HeroSectionProfilePage />
@@ -24,6 +24,6 @@ const ProfilePage = () => {
       <LinkedinModal />
       <ExpModal />
     </>
-  )
-}
-export default ProfilePage
+  );
+};
+export default ProfilePage;
