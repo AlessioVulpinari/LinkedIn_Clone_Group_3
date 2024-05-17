@@ -679,25 +679,38 @@ body {
   width: 30px;
   height: 30px;
 }
-.commentBtns {
-  color: white;
+
+.custom-input-group {
+  display: flex;
+  align-items: center;
   background-color: transparent;
   border-radius: 25px;
-  border: solid 1px transparent;
+  border: 1px solid rgba(255, 255, 255, 0.795);
 }
-.commentBtns:hover {
-  background-color: #38434f73;
-  border: solid 1px transparent;
-}
-.addComment {
+.custom-input-group .form-control {
+  background-color: transparent;
+  color: #ffffff;
+  padding: 0.6em;
   border: none;
-  color: white;
-  font-size: 13px;
+  border-radius: 25px;
 }
-.addComment::placeholder {
-  color: rgb(5, 5, 5);
-  font-size: 13px;
+.form:focus {
+  border: 1px solid rgba(255, 255, 255, 0.795);
 }
+.custom-input-group .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.74);
+}
+.custom-input-group .btn {
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+}
+.custom-input-group .btn i {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.842);
+}
+
 .comment {
   background-color: #ffffff15;
   a {
@@ -724,6 +737,16 @@ body {
   border: solid 1px transparent;
 }
 .commentBtn:hover {
+  background-color: #38434f73;
+  border: solid 1px transparent;
+}
+.deleteBtn {
+  background-color: transparent;
+  border-radius: 25px;
+  border: solid 1px transparent;
+  font-size: 13px;
+}
+.deleteBtn:hover {
   background-color: #38434f73;
   border: solid 1px transparent;
 }

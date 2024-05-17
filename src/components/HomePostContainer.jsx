@@ -28,39 +28,41 @@ const HomePost = () => {
     .map((post) => (
       <Card className="mb-2 bg-dark text-light" key={post._id}>
         <Card.Body className="px-0 pt-2 pb-1">
-          <div className="d-flex align-items-center mb-2 px-3">
-            <img
-              src={post.user.image}
-              alt={post.user._id}
-              height="48px"
-              width="48px"
-              className="rounded-circle objectfit-cover me-2 pointer"
-            />
-            <div>
-              <div className="d-flex justify-content-between">
-                <a
-                  href="#99"
-                  className="text-white nav-profile-premium fw-semibold link-underline link-underline-opacity-0 link-underline-opacity-100-hover fs-7"
-                >
-                  {post.user.name} {post.user.surname} {"(" + post.user.username + ")" || ""}
-                </a>
+          <div className="d-flex justify-content-between align-items-start">
+            <div className="d-flex align-items-center mb-2 px-3">
+              <img
+                src={post.user.image}
+                alt={post.user._id}
+                height="48px"
+                width="48px"
+                className="rounded-circle objectfit-cover me-2 pointer"
+              />
+              <div>
+                <div className="d-flex justify-content-between">
+                  <a
+                    href="#99"
+                    className="text-white nav-profile-premium fw-semibold link-underline link-underline-opacity-0 link-underline-opacity-100-hover fs-7"
+                  >
+                    {post.user.name} {post.user.surname} {"(" + post.user.username + ")" || ""}
+                  </a>
+                </div>
 
-                {post.user._id === profile._id && (
-                  <Button className="addBtn">
-                    <i className="bi bi-trash" onClick={() => dispatch(deletePost(post._id))} />{" "}
-                  </Button>
-                )}
+                <p className="m-0 fs-8 text-secondary pointer">
+                  {post.user.title} - {post.user.area}
+                </p>
+                <p className="m-0 fs-8 text-secondary pointer">
+                  Pubblicato il: {formatDate(post.createdAt)} <i className="bi bi-dot"></i>{" "}
+                  <i className="fa-solid fa-earth-europe"></i>
+                </p>
               </div>
-
-              <p className="m-0 fs-8 text-secondary pointer">
-                {post.user.title} - {post.user.area}
-              </p>
-              <p className="m-0 fs-8 text-secondary pointer">
-                Pubblicato il: {formatDate(post.createdAt)} <i className="bi bi-dot"></i>{" "}
-                <i className="fa-solid fa-earth-europe"></i>
-              </p>
             </div>
+            {post.user._id === profile._id && (
+              <Button className="deleteBtn mx-2">
+                <i className="bi bi-trash" onClick={() => dispatch(deletePost(post._id))} />{" "}
+              </Button>
+            )}
           </div>
+
           <div className="px-3">
             <p className="fs-7">{post.text}</p>
           </div>
