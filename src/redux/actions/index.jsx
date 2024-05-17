@@ -19,6 +19,7 @@ export const SET_POSTS_LOADING_OFF = "SET_POSTS_LOADING_OFF"
 export const SET_POST_MODAL_ON = "SET_POST_MODAL_ON"
 export const SET_POST_MODAL_OFF = "SET_POST_MODAL_OFF"
 export const SET_MODAL_TEXT = "SET_MODAL_TEXT"
+export const RESET_MODAL_TEXT = "RESET_MODAL_TEXT"
 
 // FORM
 export const SET_PROFILE_MODAL_OFF = "SET_PROFILE_MODAL_OFF"
@@ -430,6 +431,7 @@ export const newPost = (obj) => {
       if (response.ok) {
         const post = await response.json()
         dispatch({ type: ADD_POST, payload: post })
+        dispatch({ type: RESET_MODAL_TEXT })
       } else {
         if (response.status === 400) {
           throw new Error("400: Bad Request")
@@ -468,6 +470,60 @@ export const newPost = (obj) => {
     } finally {
       dispatch({ type: SET_POSTS_LOADING_ON })
       dispatch({ type: SET_POST_MODAL_OFF })
+      dispatch(getAllPostsAction())
+    }
+  }
+}
+
+export const deletePost = (postId) => {
+  return async (dispatch) => {
+    try {
+      const response = await fetch("https://striveschool-api.herokuapp.com/api/posts/" + postId, {
+        method: "DELETE",
+        headers: {
+          authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQxYzQ5NDE2N2U1MzAwMTVmYTY5N2YiLCJpYXQiOjE3MTU1ODYxOTYsImV4cCI6MTcxNjc5NTc5Nn0.E4rFzec_PCvcUXZGUjj_lOZjXWSmTMzgHKFcZMkg-wg",
+        },
+      })
+      if (response.ok) {
+        const post = await response.json()
+        console.log(post)
+      } else {
+        if (response.status === 400) {
+          throw new Error("400: Bad Request")
+        }
+        if (response.status === 401) {
+          throw new Error("401: Unauthorized")
+        }
+        if (response.status === 402) {
+          throw new Error("402: Payment Required")
+        }
+        if (response.status === 403) {
+          throw new Error("403: Forbidden")
+        }
+        if (response.status === 404) {
+          throw new Error("404: Not Found")
+        }
+        if (response.status === 405) {
+          throw new Error("405: Method Not Allowed")
+        }
+        if (response.status === 406) {
+          throw new Error("406: Not Acceptable")
+        }
+        if (response.status === 407) {
+          throw new Error("407: Proxy Authentication Required")
+        }
+        if (response.status === 408) {
+          throw new Error("408: Request Timeout")
+        }
+        if (response.status === 500) {
+          throw new Error("500: Server Error")
+        }
+        throw new Error("Generic Fetch Error")
+      }
+    } catch (error) {
+      dispatch({ type: SET_POSTS_ERROR_ON, payload: error.message })
+    } finally {
       dispatch(getAllPostsAction())
     }
   }

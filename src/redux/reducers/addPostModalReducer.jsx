@@ -1,4 +1,4 @@
-import { SET_MODAL_TEXT, SET_POST_MODAL_OFF, SET_POST_MODAL_ON } from "../actions"
+import { RESET_MODAL_TEXT, SET_MODAL_TEXT, SET_POST_MODAL_OFF, SET_POST_MODAL_ON } from "../actions"
 
 const initialState = {
   active: false,
@@ -22,6 +22,12 @@ const addPostModalReducer = (state = initialState, action) => {
       return {
         ...state,
         text: action.payload,
+      }
+
+    case RESET_MODAL_TEXT:
+      return {
+        ...state,
+        text: "",
       }
 
     default:

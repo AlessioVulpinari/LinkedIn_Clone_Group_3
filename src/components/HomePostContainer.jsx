@@ -1,11 +1,12 @@
 import { useEffect } from "react"
-import { Card } from "react-bootstrap"
+import { Button, Card } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
-import { getAllPostsAction } from "../redux/actions"
+import { deletePost, getAllPostsAction } from "../redux/actions"
 
 const HomePost = () => {
   const dispatch = useDispatch()
   const posts = useSelector((state) => state.posts.posts)
+  const profile = useSelector((state) => state.profile.content)
 
   const formatDate = (date) => {
     const year = date.slice(0, 4)
@@ -34,12 +35,21 @@ const HomePost = () => {
               className='rounded-circle objectfit-cover me-2 pointer'
             />
             <div>
-              <a
-                href='#99'
-                className='text-white nav-profile-premium fw-semibold link-underline link-underline-opacity-0 link-underline-opacity-100-hover fs-7'
-              >
-                {post.user.name} {post.user.surname} {"(" + post.user.username + ")" || ""}
-              </a>
+              <div className='d-flex justify-content-between'>
+                <a
+                  href='#99'
+                  className='text-white nav-profile-premium fw-semibold link-underline link-underline-opacity-0 link-underline-opacity-100-hover fs-7'
+                >
+                  {post.user.name} {post.user.surname} {"(" + post.user.username + ")" || ""}
+                </a>
+
+                {post.user._id === profile._id && (
+                  <Button className='addBtn'>
+                    <i className='bi bi-trash' onClick={() => dispatch(deletePost(post._id))} />{" "}
+                  </Button>
+                )}
+              </div>
+
               <p className='m-0 fs-8 text-secondary pointer'>
                 {post.user.title} - {post.user.area}
               </p>

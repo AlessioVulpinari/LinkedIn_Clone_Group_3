@@ -53,7 +53,6 @@ const SingleExperience = ({ experience }) => {
                     <i
                       className='bi bi-trash'
                       type='button'
-                      // onClick={() => console.log("Eliminato", experience._id)}
                       onClick={() => dispatch(deleteProfileExperience("6641c494167e530015fa697f", experience._id))}
                     />
                   </Button>
