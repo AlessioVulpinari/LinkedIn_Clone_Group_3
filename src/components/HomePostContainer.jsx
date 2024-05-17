@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { deletePost, getAllPostsAction } from "../redux/actions";
@@ -9,6 +9,9 @@ const HomePost = () => {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts.posts);
   const profile = useSelector((state) => state.profile.content);
+  const [comments, setComments] = useState([]);
+  const token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjE4ZjQwNTdmMzA0NjAwMWFlNTlmOTAiLCJpYXQiOjE3MTU5NDM4MzIsImV4cCI6MTcxNzE1MzQzMn0.lTbhQD4udc6x45vrgMmlzwik9ZMVDhOFtaDhCrVq0L0";
 
   const formatDate = (date) => {
     const year = date.slice(0, 4);
@@ -18,8 +21,54 @@ const HomePost = () => {
     return `${day}/${month}/${year} alle ${hour}`;
   };
 
+  const fetchComments = async () => {
+    try {
+      const response = await fetch("https://striveschool-api.herokuapp.com/api/comments", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const data = await response.json();
+      setComments(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const addComment = async (newComment) => {
+    try {
+      const response = await fetch("https://striveschool-api.herokuapp.com/api/comments/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(newComment),
+      });
+      const data = await response.json();
+      setComments([...comments, data]);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const deleteComment = async (commentId) => {
+    try {
+      await fetch(`https://striveschool-api.herokuapp.com/api/comments/${commentId}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      setComments(comments.filter((comment) => comment._id !== commentId));
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
     dispatch(getAllPostsAction());
+    fetchComments();
   }, []);
 
   return posts
@@ -89,8 +138,12 @@ const HomePost = () => {
               </div>
             </div>
           </div>
-          <AddCommentSection />
-          <SingleComment />
+          <AddCommentSection postId={post._id} addComment={addComment} />
+          {comments
+            .filter((comment) => comment.elementId === post._id)
+            .map((comment) => (
+              <SingleComment key={comment._id} comment={comment} deleteComment={deleteComment} />
+            ))}
         </Card.Body>
       </Card>
     ));

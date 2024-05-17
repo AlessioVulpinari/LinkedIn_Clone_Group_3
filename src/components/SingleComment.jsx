@@ -1,6 +1,6 @@
 import { Button, Container } from "react-bootstrap";
 
-function SingleComment() {
+function SingleComment({ comment, deleteComment }) {
   return (
     <>
       <Container>
@@ -13,17 +13,16 @@ function SingleComment() {
           <div>
             <div className="comment rounded p-2 mb-1">
               <div className="d-flex justify-content-between">
-                <a href="#">Nome Cognome</a>
-                <p className="text-secondary">Data</p>
+                <a href="#784">{comment.author}</a>
               </div>
-              <p className="text-secondary">Ruolo</p>
-              <p className="mt-1">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis excepturi atque incidunt saepe amet
-                doloribus praesentium! Asperiores quod velit est?
-              </p>
+              <p className="text-secondary">Full Stack Web Developer</p>
+              <p className="mt-1">{comment.comment}</p>
             </div>
             <Button className="commentBtn">Consiglia</Button>
             <Button className="commentBtn">Rispondi</Button>
+            <Button className="commentBtn" onClick={() => deleteComment(comment._id)}>
+              Elimina
+            </Button>
           </div>
         </div>
       </Container>
