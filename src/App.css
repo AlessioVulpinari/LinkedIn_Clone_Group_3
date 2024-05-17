@@ -669,6 +669,64 @@ body {
     background-color: #6c757d44;
   }
 }
+#postBtns {
+  .addContentBtn {
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.863);
+  }
+}
+.commentPic {
+  width: 30px;
+  height: 30px;
+}
+.commentBtns {
+  color: white;
+  background-color: transparent;
+  border-radius: 25px;
+  border: solid 1px transparent;
+}
+.commentBtns:hover {
+  background-color: #38434f73;
+  border: solid 1px transparent;
+}
+.addComment {
+  border: none;
+  color: white;
+  font-size: 13px;
+}
+.addComment::placeholder {
+  color: rgb(5, 5, 5);
+  font-size: 13px;
+}
+.comment {
+  background-color: #ffffff15;
+  a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  a:hover {
+    color: rgb(100, 183, 250);
+    text-decoration: underline;
+  }
+  p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+}
+.commentBtn {
+  color: rgba(255, 255, 255, 0.603);
+  font-size: 13px;
+  padding: 3px;
+  background-color: transparent;
+  border-radius: 25px;
+  border: solid 1px transparent;
+}
+.commentBtn:hover {
+  background-color: #38434f73;
+  border: solid 1px transparent;
+}
 
 /*JOBS_PAGE_MAIN*/
 #jobsMain {
