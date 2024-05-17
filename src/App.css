@@ -733,3 +733,9 @@ body {
     border: 1px solid rgb(195, 225, 250);
   }
 }
+
+/* OTHER USER PAGE */
+
+.userTopMargin {
+  margin-top: 3.5rem;
+}
